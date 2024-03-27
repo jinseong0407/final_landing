@@ -47,12 +47,14 @@
   z-index: 100; /* 다른 요소 위에 표시 */
 }
 
+.footer-padding {
+  height: 150px; /* 고정 이미지의 높이와 동일하게 설정 */
+}
 
 /* 스크롤 테스트를 위한 내용 스타일 */
 div {
   font-size: 20px;
 }
-
 /* 추가적인 글로벌 스타일 */
 body {
   margin: 0;
