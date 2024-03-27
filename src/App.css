@@ -1,0 +1,70 @@
+/* App 컴포넌트의 기본 스타일 */
+.App {
+  text-align: center;
+}
+
+/* 전체 이미지에 대한 반응형 스타일 */
+.responsive {
+  max-width: 45%;
+  height: auto;
+  margin: auto; /* 상하 마진은 지정된 값을 사용하고, 좌우 마진은 자동으로 설정 */
+  margin-bottom: 0px; /*이미지 간 간격 조정 */
+  padding : 0px;
+  display: block;
+}
+.responsive_bot{
+  max-width: 100%;
+  height: 100%;
+  margin: auto; /* 상하 마진은 지정된 값을 사용하고, 좌우 마진은 자동으로 설정 */
+  margin-bottom: 0px; /*이미지 간 간격 조정 */
+  padding : 0px;
+  display: block;
+}
+
+/* 하단에 고정되는 이미지 스타일 */
+.fixed {
+  position: fixed; /* 고정 위치 */
+  height: 16%;
+  bottom: 0; /* 하단에 고정 */
+  margin: auto; /* 상하 마진은 지정된 값을 사용하고, 좌우 마진은 자동으로 설정 */
+  left: 0; /* 왼쪽에 고정 */
+  width: 100%; /* 전체 너비 */
+  z-index: 70; /* 다른 요소 위에 표시 */
+  display: block;
+  overflow: hidden; /* 이미지 넘침 방지 */
+
+}
+
+/* 고정된 링크 스타일 */
+.fixed-link {
+  position: absolute; /* 고정 컨테이너 내에서 절대 위치 */
+  bottom: 20px; /* 하단에서의 위치, 필요에 따라 조정 */
+  left: 585px; /* 왼쪽에서의 위치, 필요에 따라 조정 */
+  width: 733px; /* 링크의 너비, 필요에 따라 조정 */
+  height: 60px; /* 링크의 높이, 필요에 따라 조정 */
+  background: rgba(255, 255, 255, 0); /* 배경 투명도 설정 (링크가 보이지 않도록) */
+  cursor: pointer; /* 클릭 가능 표시 */
+  z-index: 100; /* 다른 요소 위에 표시 */
+}
+
+
+/* 스크롤 테스트를 위한 내용 스타일 */
+div {
+  font-size: 20px;
+}
+
+/* 추가적인 글로벌 스타일 */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
