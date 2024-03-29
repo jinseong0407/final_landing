@@ -1,86 +1,115 @@
-/* App 컴포넌트의 기본 스타일 */
 .App {
   text-align: center;
 }
 
 /* 전체 이미지에 대한 반응형 스타일 */
-.responsive {
-  width: 2000px;
-  height: 800px;
+.responsive, .relative {
+  max-width: 100%; /* 이미지의 최대 너비를 화면 너비에 맞춤 */
+  height: auto; /* 이미지의 높이를 자동으로 조정하여 비율 유지 */
   margin: auto; /* 상하 마진은 지정된 값을 사용하고, 좌우 마진은 자동으로 설정 */
-  margin-bottom: 0px; /*이미지 간 간격 조정 */
-  padding : 0px;
-  display: block;
+  display: block; /* 이미지를 블록 요소로 설정 */
 }
 
-/* 상대적인 링크를 포함하는 컨테이너의 스타일 */
-.relative {
-  width: 2000px;
-  height: 800px;
-  margin: auto; /* 상하 마진은 지정된 값을 사용하고, 좌우 마진은 자동으로 설정 */
-  margin-bottom: 0px; /*이미지 간 간격 조정 */
-  padding : 0px;
-  display: block;
+.relative-container {
+  position: relative; /* 이 컨테이너 내에서 .relative-link의 위치를 결정 */
 }
 
-/* 상대적인 링크 스타일 */
+.image-wrapper {
+  display: block; /* 필요에 따라 추가, 이미지를 블록 요소로 설정 */
+}
+
 .relative-link {
   position: absolute;
-  top: 3075px;
-  left: 500px; /* 왼쪽에서의 위치, 필요에 따라 조정 */
-  width: 1000px; /* 링크의 너비, 필요에 따라 조정 */
-  height: 100px; /* 링크의 높이, 필요에 따라 조정 */
+  top: 485px; /* 이미지에 대해 상대적인 위치 설정 */
+  left: 50%; /* 기준점으로부터 왼쪽으로 25% 위치 */
+  transform: translate(-50%, -50%);
+  width: 42%; /* 너비를 50%로 설정 */
+  height: 60px; /* 높이 설정 */
   background: rgba(255, 255, 255, 0);
   cursor: pointer;
   z-index: 10;
 }
-
 /* 하단에 고정되는 이미지 스타일 */
 .fixed {
-  position: fixed; /* 고정 위치 */
-  height: 16%;
-  bottom: 0; /* 하단에 고정 */
-  margin: auto; /* 상하 마진은 지정된 값을 사용하고, 좌우 마진은 자동으로 설정 */
-  left: 0; /* 왼쪽에 고정 */
-  width: 100%; /* 전체 너비 */
-  z-index: 70; /* 다른 요소 위에 표시 */
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%; /* 이미지의 최대 너비를 화면 너비에 맞춤 */
+  height: auto; /* 이미지의 높이를 자동으로 조정하여 비율 유지 */
+  bottom: 0;
+  z-index: 70;
   display: block;
-  overflow: hidden; /* 이미지 넘침 방지 */
-
+  overflow: hidden;
 }
 
 /* 고정된 링크 스타일 */
 .fixed-link {
-  position: absolute; /* 고정 컨테이너 내에서 절대 위치 */
-  bottom: 20px; /* 하단에서의 위치, 필요에 따라 조정 */
-  left: 585px; /* 왼쪽에서의 위치, 필요에 따라 조정 */
-  width: 733px; /* 링크의 너비, 필요에 따라 조정 */
-  height: 60px; /* 링크의 높이, 필요에 따라 조정 */
+  position: fixed;
+  bottom: 23px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 22%; /* 화면의 너비에 맞추어 조정 */
+  height: 50px; /* 높이는 필요에 따라 조정 */
   background: rgba(255, 255, 255, 0); /* 배경 투명도 설정 (링크가 보이지 않도록) */
-  cursor: pointer; /* 클릭 가능 표시 */
-  z-index: 100; /* 다른 요소 위에 표시 */
+  cursor: pointer;
+  z-index: 100;
 }
 
-.footer-padding {
-  height: 150px; /* 고정 이미지의 높이와 동일하게 설정 */
+.footer-padding::after {
+  content: '';
+  display: block;
+  height: 130px; /* 원하는 높이로 설정 */
 }
 
-/* 스크롤 테스트를 위한 내용 스타일 */
-div {
-  font-size: 20px;
-}
-/* 추가적인 글로벌 스타일 */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@media only screen and (max-width: 767px) {
+  body {
+    overflow-x: hidden;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block;
+  }
+
+  .footer-padding, .footer-padding::after {
+    height: 100px; /* 높이를 0으로 설정하여 기존 여백 제거 */
+  }
+  .fixed-container, .image-wrapper {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .responsive, .relative, .fixed, .fixed-link {
+    width: 100%;
+    height: auto;
+  }
+  .relative-link {
+    position: absolute;
+    top: 550px; /* 이미지에 대해 상대적인 위치 설정 */
+    left: 50%; /* 기준점으로부터 왼쪽으로 25% 위치 */
+    transform: translate(-50%, -50%);
+    width: 0%; /* 너비를 50%로 설정 */
+    height: 60px; /* 높이 설정 */
+    background: rgb(255, 255, 255, 0);
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  .fixed-link {
+    width: 88%;
+    height: 45px;
+    bottom: 20px;
+    background: rgba(255, 255, 255, 0);
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .image-wrapper img {
+    /* 태블릿에 최적화된 이미지 크기 조정 */
+    max-width: 100%;
+    height: auto;
+    /* 필요에 따라 추가 스타일링 */
+  }
+
+  /* 태블릿에서의 다른 요소들에 대한 스타일링도 여기에 추가할 수 있습니다. */
 }
