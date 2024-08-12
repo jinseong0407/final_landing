@@ -3,14 +3,9 @@ import './App.css'; // CSS 파일 import
 import bb from './images/bb1.png'; // 예시 이미지 import
 
 function App() {
-  // handleDownload 함수 정의
-  const handleDownload = () => {
-    const link = document.createElement('a');
-    link.href = '/BoundAssetInstaller.exe'; // 다운로드할 .exe 파일의 경로
-    link.download = 'BoundAssetInstaller.exe'; // 다운로드될 파일의 이름
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  // handleLink 함수 정의
+  const handleLink = () => {
+    window.open('https://front-web.best-traders.com/downloads/BoundAssetInstaller.exe', '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -32,10 +27,9 @@ function App() {
           <span className="emphasis">🎁 신규 가입 혜택!</span><br />
           신규 가입하시는 모든 분께 즉시 300,000원의 증거금을 지원해 드립니다!<br />
           <br />
-
-          🔥 이 모든 혜택을 누리려면 지금 바로 가입하세요!<br />
+          👇 참여를 원하신다면? 다운로드 버튼 클릭  👇<br />
         </p>
-        <button onClick={handleDownload} className="download-button">다운로드</button>
+        <button onClick={handleLink} className="download-button">다운로드</button>
       </div>
     </div>
   );
