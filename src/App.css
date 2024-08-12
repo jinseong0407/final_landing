@@ -1,115 +1,109 @@
+/* 전체 화면 설정 */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+}
+
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
 }
 
-/* 전체 이미지에 대한 반응형 스타일 */
-.responsive, .relative {
-  max-width: 100%; /* 이미지의 최대 너비를 화면 너비에 맞춤 */
-  height: auto; /* 이미지의 높이를 자동으로 조정하여 비율 유지 */
-  margin: auto; /* 상하 마진은 지정된 값을 사용하고, 좌우 마진은 자동으로 설정 */
-  display: block; /* 이미지를 블록 요소로 설정 */
-}
-
-.relative-container {
-  position: relative; /* 이 컨테이너 내에서 .relative-link의 위치를 결정 */
-}
-
+/* 이미지 스타일 */
 .image-wrapper {
-  display: block; /* 필요에 따라 추가, 이미지를 블록 요소로 설정 */
+  width: 100%;
+  max-width: 800px;
+  height: 200px; 
+  margin-bottom: 0px;
+  overflow: hidden; 
+  border-radius: 10px 10px 0 0; 
 }
 
-.relative-link {
-  position: absolute;
-  top: 485px; /* 이미지에 대해 상대적인 위치 설정 */
-  left: 50%; /* 기준점으로부터 왼쪽으로 25% 위치 */
-  transform: translate(-50%, -50%);
-  width: 42%; /* 너비를 50%로 설정 */
-  height: 60px; /* 높이 설정 */
-  background: rgba(255, 255, 255, 0);
+.responsive {
+  width: 100%;
+  height: 100%; 
+  object-fit: cover; 
+}
+
+/* 텍스트 영역 스타일 */
+.text-wrapper {
+  max-width: 800px;
+  text-align: center;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 0 0 10px 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* 문구의 크기와 색상 조정 */
+.description {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.description .highlight {
+  font-size: 1.3rem; /* 크기 조정 */
+  color: #007BFF; /* 색상 조정 */
+}
+
+.description .emphasis {
+  font-size: 1.4rem; /* 크기 조정 */
+  color: #FF5733; /* 색상 조정 */
+}
+
+.download-button {
+  background-color: #007BFF;
+  color: white;
+  padding: 12px 20px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
-  z-index: 10;
-}
-/* 하단에 고정되는 이미지 스타일 */
-.fixed {
-  position: fixed;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 100%; /* 이미지의 최대 너비를 화면 너비에 맞춤 */
-  height: auto; /* 이미지의 높이를 자동으로 조정하여 비율 유지 */
-  bottom: 0;
-  z-index: 70;
-  display: block;
-  overflow: hidden;
+  transition: background-color 0.3s ease;
 }
 
-/* 고정된 링크 스타일 */
-.fixed-link {
-  position: fixed;
-  bottom: 23px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 22%; /* 화면의 너비에 맞추어 조정 */
-  height: 50px; /* 높이는 필요에 따라 조정 */
-  background: rgba(255, 255, 255, 0); /* 배경 투명도 설정 (링크가 보이지 않도록) */
-  cursor: pointer;
-  z-index: 100;
+.download-button:hover {
+  background-color: #0056b3;
 }
 
-.footer-padding::after {
-  content: '';
-  display: block;
-  height: 130px; /* 원하는 높이로 설정 */
-}
-
-@media only screen and (max-width: 767px) {
-  body {
-    overflow-x: hidden;
-    margin: 0 !important;
-    padding: 0 !important;
-    display: block;
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
   }
 
-  .footer-padding, .footer-padding::after {
-    height: 100px; /* 높이를 0으로 설정하여 기존 여백 제거 */
-  }
-  .fixed-container, .image-wrapper {
-    margin-bottom: 0;
-    padding-bottom: 0;
+  .description {
+    font-size: 1rem;
   }
 
-  .responsive, .relative, .fixed, .fixed-link {
-    width: 100%;
-    height: auto;
-  }
-  .relative-link {
-    position: absolute;
-    top: 550px; /* 이미지에 대해 상대적인 위치 설정 */
-    left: 50%; /* 기준점으로부터 왼쪽으로 25% 위치 */
-    transform: translate(-50%, -50%);
-    width: 0%; /* 너비를 50%로 설정 */
-    height: 60px; /* 높이 설정 */
-    background: rgb(255, 255, 255, 0);
-    cursor: pointer;
-    z-index: 10;
-  }
-
-  .fixed-link {
-    width: 88%;
-    height: 45px;
-    bottom: 20px;
-    background: rgba(255, 255, 255, 0);
+  .download-button {
+    padding: 10px 18px;
+    font-size: 1rem;
   }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-  .image-wrapper img {
-    /* 태블릿에 최적화된 이미지 크기 조정 */
-    max-width: 100%;
-    height: auto;
-    /* 필요에 따라 추가 스타일링 */
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.5rem;
   }
 
-  /* 태블릿에서의 다른 요소들에 대한 스타일링도 여기에 추가할 수 있습니다. */
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .download-button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
 }
