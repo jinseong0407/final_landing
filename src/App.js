@@ -18,16 +18,16 @@ function App() {
         <p className="description">
           이달의 신규 이벤트에 참여하여 다양한 혜택을 누리세요!<br />
           <br />
-          <span className="highlight">👍 초특가 수수료 이벤트!</span><br />
+          <span className="highlight">👍 수수료 3$ 최저가!</span><br />
           최저 수수료 $3 적용! 업계 최저가를 보장합니다!<br />
-          <br />
-          <span className="highlight">💸 수수료 페이백 프로모션!</span><br />
-          매주 발생하는 수수료의 50%를 환급해드립니다!<br />
-          <br />
-          <span className="emphasis">🎁 신규 가입 혜택!</span><br />
+          <br />                
+          <span className="emphasis">🎁 8월 가입 회원 30만원 지원금!</span><br />
           신규 가입하시는 모든 분께 즉시 300,000원의 증거금을 지원해 드립니다!<br />
           <br />
-          👇 참여를 원하신다면? 다운로드 버튼 클릭  👇<br />
+          <span className="highlight">💸 증권사 이전 지인 추천 이벤트 (문의)</span><br />
+          
+          <br />
+           👇 참여를 원하신다면? 다운로드 버튼 클릭<br />
         </p>
         <button onClick={handleLink} className="download-button">다운로드</button>
       </div>
