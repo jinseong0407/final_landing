@@ -9,12 +9,18 @@ function App() {
   };
 
   const handleLink2 = () => {
-    window.open('https://example.com/link2', '_blank', 'noopener,noreferrer'); // 여기에 두 번째 링크 추가
+    window.open('https://front-web.best-traders.com/downloads/bound.apk', '_blank', 'noopener,noreferrer'); // 여기에 두 번째 링크 추가
   };
 
   const handleLink3 = () => {
-    window.open('https://example.com/link3', '_blank', 'noopener,noreferrer'); // 여기에 세 번째 링크 추가
+    window.open('https://htsweb.best-traders.com', '_blank', 'noopener,noreferrer'); // 여기에 세 번째 링크 추가
   };
+
+  
+  const handleLink4 = () => {
+    window.open('https://m.blog.naver.com/smilecat007/220749222759', '_blank', 'noopener,noreferrer'); // 여기에 세 번째 링크 추가
+  };
+
 
   return (
     <div className="App">
@@ -45,6 +51,9 @@ function App() {
           <br />
           <br />
           <button onClick={handleLink3} className="download-button">아이폰 다운로드(모바일)</button>
+          <br />
+          <br />
+          <button onClick={handleLink4} className="download-button">아이폰 바로가기 추가방법</button>
         </div>
       </div>
     </div>
